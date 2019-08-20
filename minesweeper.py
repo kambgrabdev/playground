@@ -17,13 +17,14 @@ class minesweeper:
 
     def checkField(self,field):
         if self.backmatrix[field[0]][field[1]]==".":
-            print("end game")
+            return False
         else:
             if isinstance(self.backmatrix[field[0]][field[1]],int): 
                 self.frontmatrix[field[0]][field[1]]=self.backmatrix[field[0]][field[1]]
             else:        
                 self.frontmatrix[field[0]][field[1]]=str()
             self.clearNeighboringFields(field)
+            return True
     
     def clearNeighboringFields(self,field):
         for i in [[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]]:
@@ -38,11 +39,6 @@ class minesweeper:
                     print([X,Y])
                     if isinstance(self.backmatrix[X][Y], int): 
                         self.frontmatrix[X][Y]=self.backmatrix[X][Y]
-                   
-                    
-
-            else:
-                pass
 
     def incrementMinesNeighboring(self,field):
         for i in [[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]]:
