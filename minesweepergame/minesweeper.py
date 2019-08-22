@@ -60,7 +60,7 @@ class minesweeper:
             self.frontmatrix=copy.deepcopy(self.backmatrix)
             
             i=0
-            while i <= int(len(self.backmatrix)*len(self.backmatrix[0])*self.lvl): 
+            while i < int(len(self.backmatrix)*len(self.backmatrix[0])*self.lvl): 
                 choiced=[int(r.choice(range(int(len(self.backmatrix))))),int(r.choice(range(int(len(self.backmatrix[0])))))]
                 print(choiced)
                 if choiced not in choisedList:

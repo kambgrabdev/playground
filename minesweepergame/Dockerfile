@@ -1,4 +1,4 @@
-FROM python:3.6
+FROM python:3.6-alpine3.9
 RUN pip install flask gunicorn
 COPY app /opt/app/
 COPY minesweeper.py /opt/minesweeper.py
